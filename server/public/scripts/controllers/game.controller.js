@@ -1,9 +1,12 @@
-colorBlocks.controller('GameController', function() {
+//The GameController will need to call the Factory
+
+colorBlocks.controller('GameController',['DataFactory',function(DataFactory) {
 
 console.log('game controller running');
 
 var self = this;
-self.colors = ['red', 'blue', 'magenta', 'green', 'pink'];
+// This is where we will bring in our factory 'exports'
+self.colors = DataFactory.gameColors
 
 // start game
 init();
@@ -29,4 +32,4 @@ self.handleInput = function(clickedColor) {
 function randomNumber(min, max){
     return Math.floor(Math.random() * (1 + max - min) + min);
 }
-});
+}]);
