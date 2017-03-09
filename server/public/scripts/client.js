@@ -13,6 +13,11 @@ colorBlocks.config(['$routeProvider', function($routeProvider) {
             controller: 'SettingsController',
             controllerAs: 'settings'
         })
+        .when('/scores', {
+          templateUrl: '/views/templates/scoresview.html',
+          controller: 'ScoresController',
+          controllerAs: 'scores'
+        })
         .otherwise({
             redirectTo: '/play'
         });

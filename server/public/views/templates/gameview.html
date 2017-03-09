@@ -1,5 +1,19 @@
+<div ng-controller="ScoresController as scores">
+  <h2>The Score to Beat is: <span>{{scores.highScore}}</span>...Good Luck!</h2>
+</div>
+<div>
+  <label>Player Name: <input ng-model="game.players.name"type="text" /></label>
+  
+</div>
+<div>
+  <h3>Current Score: <span>{{game.currentScore}}</span></h3>
+</div>
+
+
+
 <div class="row" id="gameview">
   <h1>{{game.colorPrompt}}</h1>
+
 
   <h3 ng-if="game.messageText != ''" class="alert alert-warning">{{game.messageText}}</h3>
 

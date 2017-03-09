@@ -7,6 +7,8 @@ console.log('game controller running');
 var self = this;
 // This is where we will bring in our factory 'exports'
 self.colors = DataFactory.gameColors //and array of objects
+self.currentScore = 0;
+self.players = DataFactory.players
 
 
 
@@ -26,6 +28,7 @@ function init() {
 // click handler for guessing colors
 self.handleInput = function(clickedColor) {
   if(clickedColor === self.currentColor) {
+    self.currentScore++ ;
     alert('You got it!\n\nNow try another!');
     init();
   } else {

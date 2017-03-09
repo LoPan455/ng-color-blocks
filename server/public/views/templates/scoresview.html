@@ -1,0 +1,40 @@
+<div class="row" id="scoresview">
+
+  <h2>All Time High Scores</h2>
+
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          Player Name
+        </th>
+        <th>
+          High Score
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="players in scores.players">
+        <td>
+          {{players.name}}
+        </td>
+        <td>
+          {{players.score}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div>
+    <p>
+      The high score is: {{scores.highScore}}
+    </p>
+  </div>
+
+
+  </tr>
+</div>
+
+
+</div>
