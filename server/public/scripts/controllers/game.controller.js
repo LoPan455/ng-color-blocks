@@ -6,16 +6,21 @@ console.log('game controller running');
 
 var self = this;
 // This is where we will bring in our factory 'exports'
-self.colors = DataFactory.gameColors
+self.colors = DataFactory.gameColors //and array of objects
+
+
+
+
 
 // start game
 init();
 
 // resets game to the starting state
 function init() {
+  console.log('self.colors is: ',self.colors);
   self.messageText = "";
   self.currentColor = self.colors[randomNumber(0, self.colors.length - 1)];
-  self.colorPrompt = 'Can you find the ' + self.currentColor + ' block?'
+  self.colorPrompt = 'Can you find the ' + self.currentColor.name + ' block?'
 }
 
 // click handler for guessing colors

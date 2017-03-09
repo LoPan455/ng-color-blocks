@@ -2,12 +2,14 @@
   <h1>Settings</h1>
 
   <h2>Add a color to the game!</h2>
-  <label>Color: <input ng-model="settings.newColor" type="text" placeholder="Enter a valid CSS color"></label>
+  <label>Color: <input ng-model="settings.newColor.name" type="text" placeholder="Enter a valid CSS color"></label>
   <button ng-click="settings.addColor()" type="button" name="submitButton">Submit</button>
 
 <ul ng-repeat="colors in settings.gameColors">
-<li><input value="{{colors}}"/></li>
+<li><input ng-model="colors.name"value="{{colors.name}}"></li>
 </ul>
+
+<p>setting.gameColors is --> {{settings.gameColors}}</p>
 
 
 
