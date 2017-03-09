@@ -2,8 +2,10 @@
   <h2>The Score to Beat is: <span>{{scores.highScore}}</span>...Good Luck!</h2>
 </div>
 <div>
-  <label>Player Name: <input ng-model="game.players.name"type="text" /></label>
-  
+  <label>Player Name: <input ng-model="game.currentPlayer.name"type="text" /></label>
+  <p>
+    game.currentPlayer is --> {{game.currentPlayer}}
+  </p>
 </div>
 <div>
   <h3>Current Score: <span>{{game.currentScore}}</span></h3>

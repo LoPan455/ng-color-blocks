@@ -8,7 +8,8 @@ var self = this;
 // This is where we will bring in our factory 'exports'
 self.colors = DataFactory.gameColors //and array of objects
 self.currentScore = 0;
-self.players = DataFactory.players
+self.currentPlayer = {};
+self.players = DataFactory.gamePlayers;
 
 
 
@@ -19,7 +20,7 @@ init();
 
 // resets game to the starting state
 function init() {
-  console.log('self.colors is: ',self.colors);
+  console.log('self.players is: ',self.players);
   self.messageText = "";
   self.currentColor = self.colors[randomNumber(0, self.colors.length - 1)];
   self.colorPrompt = 'Can you find the ' + self.currentColor.name + ' block?'
@@ -30,8 +31,11 @@ self.handleInput = function(clickedColor) {
   if(clickedColor === self.currentColor) {
     self.currentScore++ ;
     alert('You got it!\n\nNow try another!');
+    self.currentPlayer.score = self.currentScore;
     init();
   } else {
+    self.players.push(self.currentPlayer);
+    console.log(self.players);
     self.messageText = 'Oh no! You guessed wrong!';
   }
 }
